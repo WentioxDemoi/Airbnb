@@ -16,6 +16,27 @@ Site web vitrine, sans back-end, hébergé sur GitHub Pages, pour présenter plu
 3. **Page détail d'un bien** : galerie photos, description, équipements, localisation, lien de réservation.
 4. **Contact / À propos** : brève présentation de l'hôte.
 
+## Responsive et usage mobile
+
+Le site sera ouvert surtout depuis un téléphone, via un QR code : la conception part donc du mobile (« mobile-first »), puis s'élargit vers la tablette et l'ordinateur.
+
+- **Approche** : styles de base pour petit écran avec Tailwind, puis adaptation aux paliers `sm` (640 px), `md` (768 px), `lg` (1024 px) et `xl` (1280 px) uniquement quand la mise en page le demande.
+- **Hero plein écran** : hauteur en `100svh` (ou `100dvh`) plutôt qu'en `100vh`, pour ne pas être coupé par les barres du navigateur mobile.
+- **Navigation** : menu replié (« burger ») sur mobile, avec le sélecteur de langue toujours accessible dans l'en-tête.
+- **Galerie photos** : défilement au doigt (swipe), images en pleine largeur, pas de survol requis pour voir une photo ou une information.
+- **Zones tactiles** : boutons et liens d'au moins 44 × 44 px, notamment le lien de réservation et le contact.
+- **Animations** : les effets de survol des cartes ont un équivalent tactile ; le parallax du hero est allégé ou désactivé sur mobile, en plus du respect de `prefers-reduced-motion`.
+- **Performances sur réseau mobile** : images en plusieurs tailles (`srcset`/`sizes`) pour ne pas charger une photo d'ordinateur sur un téléphone, chargement différé hors du premier écran.
+- **Balise viewport** : `<meta name="viewport" content="width=device-width, initial-scale=1">` dans `index.html`.
+- **Textes** : tailles lisibles sans zoom (16 px minimum pour le corps de texte), conteneurs flexibles pour les langues aux textes plus longs.
+- **Tests** : vérification sur un vrai téléphone en plus de l'émulation du navigateur, en scannant le QR code final.
+
+À propos du QR code :
+
+- Il encode l'adresse du site (HTTPS) ; elle doit rester stable, car un QR code imprimé ne se corrige pas.
+- Pointer vers la racine du site laisse la détection de langue du navigateur choisir la bonne langue pour chaque voyageur.
+- À décider : un seul QR code vers l'accueil, ou un QR code par bien vers sa page détail.
+
 ## Internationalisation
 
 Le site est publié en cinq langues au lancement : français, anglais, italien, espagnol et allemand. Ces langues suffisent pour démarrer ; en ajouter une plus tard ne demande qu'un fichier de traduction, à condition de prévoir le mécanisme dès le début.
@@ -54,4 +75,4 @@ Choix techniques :
 
 ## Question ouverte
 
-Quel est l'objectif principal du site : **rediriger vers les annonces Airbnb**, ou **pousser à contacter directement l'hôte** pour réserver ? Cette réponse conditionne la page détail, le contact et le parcours global.
+Quel est l'objectif principal du site : **pousser à contacter directement l'hôte** pour réserver ? Cette réponse conditionne la page détail, le contact et le parcours global.

@@ -15,6 +15,11 @@ Versions relevées le 13 octobre 2026 (registre npm, dépôts GitHub Actions, ca
 
 Historique : le projet a d'abord été installé sous Node `v23.7.0` (npm `10.9.2`), ce qui produisait des avertissements `EBADENGINE` sur ESLint 10 (`eslint@10.12.0`, `@eslint/js@10.0.1`, etc.), qui exigent Node `^20.19.0 || ^22.13.0 || >=24`. Le passage sur Node 24 les a supprimés.
 
+Reste à vérifier :
+
+- Le dossier parent `Airbnb/` : les premiers `npm install` y ont été lancés par erreur (voir « Nettoyage du dossier parent »).
+- Que le terminal utilise bien Node 24 dans toute nouvelle session (`node -v`). L'alias par défaut est posé, mais un fichier `.nvmrc` dans le projet garantit le choix (`nvm use` le lit).
+
 ## Environnement
 
 | Outil | Version | Remarque |
@@ -126,24 +131,6 @@ npm install -D tailwindcss @tailwindcss/vite
 ```
 
 Reste à faire : ajouter le champ `engines` et le fichier `.nvmrc` (voir « Dépendances »), puis configurer Tailwind dans `vite.config.ts` et le CSS d'entrée (voir « Tailwind 4 » plus haut).
-
-### Nettoyage du dossier parent
-
-Les premiers `npm install` ont été exécutés dans `Airbnb/`, hors du projet : ils y ont probablement créé un `package.json`, un `package-lock.json` et un `node_modules/` inutiles. Vérifier d'abord ce que contient le dossier :
-
-```bash
-cd ..
-ls -a
-```
-
-Si ces trois éléments y figurent sans avoir été créés volontairement, les supprimer (le projet `airbnb-site/` a ses propres copies) :
-
-```bash
-rm -rf node_modules package.json package-lock.json
-cd airbnb-site
-```
-
-Le gabarit `create-vite` 9.2.1 a déjà installé `vite`, `@vitejs/plugin-react`, `typescript` (`~6.0.2`), `eslint` et les types : voir la section « Dépendances ».
 
 ## Règles de gestion des versions
 
