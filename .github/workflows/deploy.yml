@@ -16,12 +16,16 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    steps:
+      steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
-        with: { node-version: 24, cache: npm }
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: airbnb-site/package-lock.json
       - run: npm ci && npm run build
+        working-directory: airbnb-site
       - uses: actions/upload-pages-artifact@v5
-        with: { path: dist }
+        with: { path: airbnb-site/dist }
       - id: deployment
         uses: actions/deploy-pages@v5
