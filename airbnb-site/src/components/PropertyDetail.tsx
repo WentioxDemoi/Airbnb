@@ -30,10 +30,15 @@ export function PropertyDetail({ property, detail }: { property: Property; detai
     ...(facts.areaM2 ? [t("property.area", { count: facts.areaM2 })] : []),
   ];
 
-  // Carte centrée sur le quartier, sans repère.
+  // Carte centrée sur le quartier, avec un repère approximatif du logement.
   const { lat, lng } = location;
-  const bbox = [lng - 0.005, lat - 0.003, lng + 0.005, lat + 0.003].join("%2C");
-  const mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik`;
+  const bbox = [
+    lng - 0.009,
+    lat - 0.0096,
+    lng + 0.009,
+    lat + 0.0096,
+  ].join("%2C");
+  const mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat}%2C${lng}`;
 
   const h2 = "font-display text-2xl";
 

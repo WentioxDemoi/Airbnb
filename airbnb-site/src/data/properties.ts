@@ -57,7 +57,7 @@ export const properties: Property[] = [
     detail: {
       facts: { guests: 2, bedrooms: 1, beds: 1, bathrooms: 1, areaM2: 30 },
       amenities: [
-        "ac", "kitchen", "heating", "washer", "smoke_detector", "essentials", "hangers", "iron",
+        "ac", "kitchen", "washer", "smoke_detector", "essentials", "iron",
         "laptop_friendly_workspace", "self_checkin", "lockbox", "hot_water", "body_soap", "bed_linens",
         "extra_pillows_and_blankets", "microwave", "coffee_maker", "refrigerator", "dishwasher",
         "dishes_and_silverware", "cooking_basics", "oven", "hot_water_kettle", "dining_table",
@@ -186,10 +186,10 @@ export const properties: Property[] = [
       facts: { guests: 8, bedrooms: 5, beds: 5, bathrooms: 2, areaM2: 160 },
       amenities: [
         "tv", "internet", "wireless_internet", "ac", "pool", "kitchen", "free_parking",
-        "allows_pets", "fireplace", "heating", "family_friendly", "washer", "dryer",
-        "smoke_detector", "carbon_monoxide_detector", "fire_extinguisher", "hangers",
+        "allows_pets", "family_friendly", "washer", "dryer",
+        "smoke_detector", "carbon_monoxide_detector", "fire_extinguisher",
         "hair_dryer", "iron", "laptop_friendly_workspace", "bathtub", "baby_bath",
-        "high_chair", "stair_gates", "childrens_books_and_toys", "crib", "hot_water",
+        "high_chair", "childrens_books_and_toys", "crib", "hot_water",
         "microwave", "coffee_maker", "refrigerator", "dishwasher", "dishes_and_silverware",
         "cooking_basics", "oven", "stove", "bbq_area", "patio_or_balcony",
         "garden_or_backyard", "hot_water_kettle", "alfresco_dining", "dining_table",
