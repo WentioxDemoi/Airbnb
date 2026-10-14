@@ -1,20 +1,39 @@
-# Spécification — Site vitrine de biens immobiliers
+# Spécification — Casa Azur
 
-Site web vitrine, sans back-end, hébergé sur GitHub Pages, pour présenter plusieurs biens immobiliers. Rendu soigné, animations légères mais fluides.
+Casa Azur est un site multilingue hébergé sur GitHub Pages qui présente deux
+locations de la Côte d’Azur : un appartement à Nice Centre et une villa à
+Roquefort-les-Pins. Il propose leurs fiches détaillées, des activités à
+découvrir dans la région et un calendrier pour envoyer une demande de séjour.
+Une demande n’est pas une réservation confirmée : le propriétaire doit
+reprendre contact avec le voyageur.
 
-## Stack recommandée
+## Stack actuelle
 
-- **Vite + React + TypeScript** : build statique simple, déploiement direct sur GitHub Pages. Le TypeScript est utile dès qu'on structure les données des biens.
-- **Tailwind CSS** : rendu soigné et responsive rapidement, sans CSS à maintenir.
-- **Framer Motion** (package `motion` aujourd'hui) : fade/slide à l'entrée, transitions de pages, parallax doux sur le hero, effets de hover sur les cartes.
-- **React Router en `HashRouter`** (ou `BrowserRouter` + astuce `404.html`) : GitHub Pages ne gère pas les routes côté serveur. Penser à définir `base` dans `vite.config.ts` si le site est servi en `username.github.io/repo`.
+- **Vite, React et TypeScript** : application statique, compilée dans `airbnb-site/`.
+- **Tailwind CSS 4** : styles et mise en page responsive.
+- **Motion** : animations, avec respect de `prefers-reduced-motion`.
+- **React Router `HashRouter`** : routes compatibles avec GitHub Pages.
+- **react-i18next** : français, anglais, italien, espagnol et allemand ; traductions dans `airbnb-site/public/locales/<lang>/translation.json`.
+- Le déploiement GitHub Pages est automatisé par `.github/workflows/deploy.yml`.
 
-## Structure du site
+## Fonctionnalités et organisation actuelles
 
-1. **Accueil** : hero plein écran avec photo d'un des biens (idéalement un carrousel/crossfade lent entre les biens), titre, bouton vers les biens.
-2. **Liste des biens** : cartes avec photo, ville, capacité, points forts.
-3. **Page détail d'un bien** : galerie photos, description, équipements, localisation, lien de réservation.
-4. **Contact / À propos** : brève présentation de l'hôte.
+- `airbnb-site/src/pages/` : accueil et pages de détail des logements.
+- `airbnb-site/src/components/` : composants partagés, dont les cartes et le calendrier de réservation.
+- `airbnb-site/src/data/properties.ts` : données et textes traduits des deux logements.
+- `airbnb-site/src/data/experiences.ts` : activités de la Côte d’Azur.
+- `airbnb-site/public/` : photos, traductions et autres ressources statiques.
+- `airbnb-site/worker/` : deux configurations Cloudflare Worker, une pour chaque calendrier Airbnb ; elles partagent le code `worker/index.js`.
+- Le calendrier combine les dates bloquées par iCal et les dates ajoutées manuellement aux données du logement. Les flux iCal privés sont stockés en secrets Cloudflare, jamais dans le site.
+- Formspree reçoit les demandes de séjour depuis le site. Le formulaire ne confirme pas la réservation.
+- La villa de Roquefort-les-Pins accueille jusqu'à 8 voyageurs ; elle a cinq chambres et impose un séjour minimum de 14 nuits. Une chambre à l'étage a un lit de 160 × 200 cm.
+- Les variables de build des Workers et de Formspree sont configurées dans les variables GitHub Actions ; voir le README racine et `airbnb-site/worker/README.md`.
+
+## Évolutions UI
+
+Conserver une présentation soignée, des animations légères et une conception
+mobile-first. Les principes ci-dessous restent des critères de conception et
+de validation.
 
 ## Responsive et usage mobile
 
@@ -55,9 +74,9 @@ Pour choisir les langues suivantes, le plus fiable est de regarder les pays d'or
 
 Choix techniques :
 
-- **Bibliothèque** : `react-i18next`, avec un fichier JSON par langue (`locales/fr.json`, etc.) chargé à la demande pour garder le site léger.
+- **Bibliothèque** : `react-i18next`, avec un fichier JSON par langue dans `public/locales/<lang>/translation.json`, chargé à la demande.
 - **Détection** : langue du navigateur, repli sur l'anglais, choix mémorisé dans `localStorage`, sélecteur de langue visible dans l'en-tête.
-- **URL** : préfixe de langue (`/fr/`, `/en/`, etc.).
+- **URL** : routes `HashRouter` (pas de préfixe de langue) ; la langue est sélectionnée via le détecteur et le sélecteur de langue.
 - **Biens** : chaque texte de `properties.ts` existe par langue (`description: { fr, en, it, es, de }`) ; le typage TypeScript signale toute traduction manquante.
 - **Formats** : dates, prix et nombres via l'API native `Intl`, jamais écrits à la main.
 - **Mise en page** : prévoir des textes plus longs (l'allemand l'est souvent) avec des conteneurs flexibles.
@@ -68,11 +87,8 @@ Choix techniques :
 
 - **Données des biens** dans un fichier `properties.ts` (ou JSON) : ajouter un bien = ajouter un objet, sans toucher au code.
 - **Images** : WebP/AVIF en plusieurs tailles, `loading="lazy"`. C'est le premier levier de fluidité.
-- **Réservation / contact sans back-end** : lien vers l'annonce Airbnb, `mailto:`, WhatsApp, ou service de formulaire type Formspree pour un vrai formulaire.
+- **Disponibilités** : les URL iCal Airbnb sont des secrets Cloudflare, lus par deux Workers distincts ; les API Worker renvoient uniquement les dates bloquées.
+- **Demandes de séjour** : formulaire Formspree. Ce sont des demandes à valider manuellement, pas une réservation instantanée.
 - **Accessibilité des animations** : respecter `prefers-reduced-motion`.
 - **Déploiement** : GitHub Actions qui build et publie sur Pages à chaque push.
 - **Optionnel** : SEO de base (balises meta, Open Graph).
-
-## Question ouverte
-
-Quel est l'objectif principal du site : **pousser à contacter directement l'hôte** pour réserver ? Cette réponse conditionne la page détail, le contact et le parcours global.

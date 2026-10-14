@@ -208,7 +208,7 @@ export const properties: Property[] = [
             "Agréable villa provençale de 160 m² au calme, au cœur d’un jardin clos et paysagé de 1 400 m². Idéale pour des vacances en famille ou entre amis, elle accueille jusqu’à 8 personnes et dispose d’une piscine privée, de cinq chambres et de beaux espaces de vie ouverts sur la terrasse.",
           space: [
             "Le séjour, la cuisine et une chambre s’ouvrent sur la terrasse ensoleillée et la piscine privée de 8 × 4 m. La piscine est sécurisée par une alarme ; des transats et une pergola avec barbecue à gaz vous attendent pour profiter du jardin.",
-            "La villa comprend cinq chambres : deux chambres avec lit double de 140 × 190 au rez-de-chaussée, puis à l’étage une chambre avec lit électrique de 160 × 200 et deux chambres avec lits simples. Un lit bébé de 60 × 120 peut être installé sur demande.",
+            "La villa comprend cinq chambres : deux chambres avec lit double de 140 × 190 au rez-de-chaussée, puis à l’étage une chambre avec lit de 160 × 200 et deux chambres avec lits simples. Un lit bébé de 60 × 120 peut être installé sur demande.",
             "Deux salles de bains complètent la maison : une salle de bains avec baignoire au rez-de-chaussée et une salle d’eau avec douche et toilettes à l’étage.",
             "La cuisine est équipée pour les séjours en famille. Vous disposez également d’une buanderie avec lave-linge et sèche-linge, de la climatisation aux deux niveaux, du Wi-Fi et d’un piano à queue.",
             "À l’arrière de la maison, un jardin ombragé avec table de ping-pong offre un coin de fraîcheur. Le terrain est clos et fermé par un portail électrique, avec stationnement à l’intérieur.",
@@ -228,7 +228,7 @@ export const properties: Property[] = [
             "A welcoming 160 m² Provençal villa in a peaceful setting, surrounded by 1,400 m² of enclosed landscaped garden. Ideal for family holidays or a stay with friends, it sleeps up to 8 and features a private pool, five bedrooms and bright living spaces opening onto the terrace.",
           space: [
             "The living room, kitchen and one bedroom open onto the sunny terrace and private 8 × 4 m pool. The pool has an alarm, and sun loungers and a pergola with a gas barbecue make it easy to enjoy the garden.",
-            "The villa has five bedrooms: two ground-floor rooms with 140 × 190 cm double beds, plus an upstairs room with a 160 × 200 cm electric bed and two rooms with single beds. A 60 × 120 cm cot is available on request.",
+            "The villa has five bedrooms: two ground-floor rooms with 140 × 190 cm double beds, plus an upstairs room with a 160 × 200 cm bed and two rooms with single beds. A 60 × 120 cm cot is available on request.",
             "There are two bathrooms: one with a bathtub on the ground floor and an upstairs shower room with a toilet.",
             "The kitchen is equipped for family stays. There is also a utility room with a washer and dryer, air conditioning on both floors, Wi-Fi and a grand piano.",
             "At the back of the house, a shaded garden with a ping-pong table offers a cool place to relax. The grounds are enclosed behind an electric gate, with parking inside.",
@@ -248,7 +248,7 @@ export const properties: Property[] = [
             "Accogliente villa provenzale di 160 m² in una zona tranquilla, circondata da un giardino recintato e curato di 1.400 m². Ideale per vacanze in famiglia o con amici, ospita fino a 8 persone e offre piscina privata, cinque camere da letto e luminosi spazi abitativi che si affacciano sulla terrazza.",
           space: [
             "Il soggiorno, la cucina e una camera si aprono sulla terrazza soleggiata e sulla piscina privata di 8 × 4 m. La piscina è protetta da un allarme; lettini e pergola con barbecue a gas invitano a godersi il giardino.",
-            "La villa dispone di cinque camere: due al piano terra con letto matrimoniale da 140 × 190 cm, una al piano superiore con letto elettrico da 160 × 200 cm e due con letti singoli. Su richiesta è disponibile una culla da 60 × 120 cm.",
+            "La villa dispone di cinque camere: due al piano terra con letto matrimoniale da 140 × 190 cm, una al piano superiore con letto da 160 × 200 cm e due con letti singoli. Su richiesta è disponibile una culla da 60 × 120 cm.",
             "Ci sono due bagni: uno con vasca al piano terra e uno con doccia e WC al piano superiore.",
             "La cucina è attrezzata per soggiorni in famiglia. Sono inoltre disponibili una lavanderia con lavatrice e asciugatrice, aria condizionata su entrambi i piani, Wi-Fi e un pianoforte a coda.",
             "Sul retro, il giardino ombreggiato con tavolo da ping-pong offre un angolo fresco per rilassarsi. La proprietà è recintata, con cancello elettrico e parcheggio interno.",
@@ -268,7 +268,7 @@ export const properties: Property[] = [
             "Agradable villa provenzal de 160 m² en un entorno tranquilo, rodeada de un jardín cerrado y cuidado de 1.400 m². Ideal para vacaciones en familia o con amigos, tiene capacidad para 8 personas, piscina privada, cinco dormitorios y espacios luminosos que dan a la terraza.",
           space: [
             "El salón, la cocina y un dormitorio se abren a la terraza soleada y a la piscina privada de 8 × 4 m. La piscina cuenta con alarma; hay tumbonas y una pérgola con barbacoa de gas para disfrutar del jardín.",
-            "La villa tiene cinco dormitorios: dos en la planta baja con camas dobles de 140 × 190 cm; arriba, uno con cama eléctrica de 160 × 200 cm y dos con camas individuales. Se ofrece una cuna de 60 × 120 cm bajo petición.",
+            "La villa tiene cinco dormitorios: dos en la planta baja con camas dobles de 140 × 190 cm; arriba, uno con cama de 160 × 200 cm y dos con camas individuales. Se ofrece una cuna de 60 × 120 cm bajo petición.",
             "Hay dos baños: uno con bañera en la planta baja y otro con ducha y aseo en la planta superior.",
             "La cocina está equipada para estancias familiares. También hay un cuarto de lavandería con lavadora y secadora, aire acondicionado en ambas plantas, Wi-Fi y un piano de cola.",
             "En la parte trasera, el jardín sombreado con mesa de ping-pong es ideal para descansar. La parcela está vallada, tiene puerta eléctrica y aparcamiento dentro.",
@@ -288,7 +288,7 @@ export const properties: Property[] = [
             "Einladende provenzalische Villa mit 160 m² in ruhiger Lage, umgeben von einem 1.400 m² großen, umzäunten und gepflegten Garten. Ideal für Familien- oder Urlaub mit Freunden: Platz für bis zu 8 Personen, privater Pool, fünf Schlafzimmer und helle Wohnbereiche mit Zugang zur Terrasse.",
           space: [
             "Wohnzimmer, Küche und ein Schlafzimmer öffnen sich zur sonnigen Terrasse und zum privaten Pool (8 × 4 m). Der Pool ist mit einem Alarm gesichert; Liegestühle und eine Pergola mit Gasgrill laden zum Entspannen im Garten ein.",
-            "Die Villa verfügt über fünf Schlafzimmer: zwei im Erdgeschoss mit Doppelbetten (140 × 190 cm), oben ein Zimmer mit elektrischem Bett (160 × 200 cm) und zwei Zimmer mit Einzelbetten. Ein Kinderbett (60 × 120 cm) ist auf Anfrage verfügbar.",
+            "Die Villa verfügt über fünf Schlafzimmer: zwei im Erdgeschoss mit Doppelbetten (140 × 190 cm), oben ein Zimmer mit einem Bett (160 × 200 cm) und zwei Zimmer mit Einzelbetten. Ein Kinderbett (60 × 120 cm) ist auf Anfrage verfügbar.",
             "Es gibt zwei Bäder: eines mit Badewanne im Erdgeschoss sowie ein Duschbad mit WC im Obergeschoss.",
             "Die Küche ist für Familienaufenthalte ausgestattet. Außerdem gibt es einen Hauswirtschaftsraum mit Waschmaschine und Trockner, Klimaanlage auf beiden Etagen, WLAN und einen Konzertflügel.",
             "Hinter dem Haus lädt ein schattiger Garten mit Tischtennisplatte zum Verweilen ein. Das Grundstück ist umzäunt, durch ein elektrisches Tor gesichert und bietet Parkplätze auf dem Grundstück.",

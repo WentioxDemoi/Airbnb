@@ -1,24 +1,23 @@
-# Versions — Site vitrine de biens immobiliers
+# Versions — Casa Azur
 
 Versions relevées le 13 octobre 2026 (registre npm, dépôts GitHub Actions, calendrier officiel Node.js), puis complétées avec la sortie du terminal après l'initialisation du projet.
 
-## État constaté sur la machine
+## État du projet
 
 | Élément | Constat |
 | --- | --- |
-| Node.js | `v24.21.0` (LTS), installé avec nvm `0.40.3`, alias par défaut `24` |
-| npm | `11.19.0` (fourni avec Node 24) |
-| Projet | `airbnb-site`, créé avec `create-vite` 9.2.1, gabarit `react-ts`, linter ESLint |
-| Serveur de dev | Vite `8.3.4`, disponible sur `http://localhost:5173/` |
-| Dépendances ajoutées | `react-router-dom`, `motion`, `i18next`, `react-i18next`, `i18next-browser-languagedetector`, `i18next-http-backend`, puis `tailwindcss` et `@tailwindcss/vite` en dev |
-| Dernière installation | `node_modules` et `package-lock.json` supprimés, puis `npm install` sous Node 24 : 188 paquets ajoutés, 189 audités, 0 vulnérabilité, aucun avertissement `EBADENGINE` |
+| Application | `airbnb-site`, React + TypeScript + Vite, Tailwind CSS 4 et ESLint |
+| Routes | React Router avec `HashRouter`, compatible avec GitHub Pages |
+| Langues | Français, anglais, italien, espagnol et allemand |
+| Calendriers | Deux Cloudflare Workers (Nice et Roquefort) partagent `worker/index.js` ; les URL iCal sont des secrets Cloudflare |
+| Demandes | Formspree ; une soumission est une demande à confirmer, pas une réservation instantanée |
+| Déploiement | GitHub Actions, Node 24, publication sur GitHub Pages |
 
 Historique : le projet a d'abord été installé sous Node `v23.7.0` (npm `10.9.2`), ce qui produisait des avertissements `EBADENGINE` sur ESLint 10 (`eslint@10.12.0`, `@eslint/js@10.0.1`, etc.), qui exigent Node `^20.19.0 || ^22.13.0 || >=24`. Le passage sur Node 24 les a supprimés.
 
-Reste à vérifier :
-
-- Le dossier parent `Airbnb/` : les premiers `npm install` y ont été lancés par erreur (voir « Nettoyage du dossier parent »).
-- Que le terminal utilise bien Node 24 dans toute nouvelle session (`node -v`). L'alias par défaut est posé, mais un fichier `.nvmrc` dans le projet garantit le choix (`nvm use` le lit).
+Les versions précises de dépendances sont celles du `package-lock.json` ; ce
+document conserve un relevé technique effectué lors de l'initialisation et ne
+remplace pas ce fichier.
 
 ## Environnement
 
@@ -93,7 +92,8 @@ Tailwind 4 n'utilise plus ni `tailwind.config.js` ni PostCSS dans la configurati
 @import "tailwindcss";
 ```
 
-Les paquets sont installés, mais la configuration reste à faire.
+La configuration est en place : `vite.config.ts` utilise `@tailwindcss/vite`
+et le CSS d'entrée importe Tailwind.
 
 ### Point d'attention : version de Node non fixée dans le projet
 
@@ -130,7 +130,9 @@ npm install react-router-dom motion i18next react-i18next i18next-browser-langua
 npm install -D tailwindcss @tailwindcss/vite
 ```
 
-Reste à faire : ajouter le champ `engines` et le fichier `.nvmrc` (voir « Dépendances »), puis configurer Tailwind dans `vite.config.ts` et le CSS d'entrée (voir « Tailwind 4 » plus haut).
+L'application et son déploiement sont opérationnels. Pour les commandes de
+développement, lancer les scripts depuis `airbnb-site/`. Le fonctionnement et
+le déploiement des Workers sont décrits dans `airbnb-site/worker/README.md`.
 
 ## Règles de gestion des versions
 
