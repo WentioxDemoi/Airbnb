@@ -1,6 +1,6 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
-import { AVAILABILITY_API_URL, FORMSPREE_FORM_ID } from "../config";
+import { FORMSPREE_FORM_ID } from "../config";
 
 function dateKey(date: Date) {
   const year = date.getFullYear();
@@ -12,6 +12,12 @@ function dateKey(date: Date) {
 function dateFromKey(value: string) {
   const [year, month, day] = value.split("-").map(Number);
   return new Date(year, month - 1, day);
+}
+
+function nightsBetween(start: string, end: string) {
+  const [startYear, startMonth, startDay] = start.split("-").map(Number);
+  const [endYear, endMonth, endDay] = end.split("-").map(Number);
+  return (Date.UTC(endYear, endMonth - 1, endDay) - Date.UTC(startYear, startMonth - 1, startDay)) / 86_400_000;
 }
 
 function hasBlockedDate(start: string, end: string, blockedDates: Set<string>) {
@@ -34,9 +40,13 @@ function isAvailabilityResponse(value: unknown): value is { blockedDates: string
 export function BookingCalendar({
   propertyName,
   blockedDates,
+  availabilityUrl,
+  minNights = 1,
 }: {
   propertyName: string;
   blockedDates: string[];
+  availabilityUrl?: string;
+  minNights?: number;
 }) {
   const { t, i18n } = useTranslation();
   const language = i18n.resolvedLanguage ?? "en";
@@ -50,7 +60,9 @@ export function BookingCalendar({
   const [departure, setDeparture] = useState("");
   const [name, setName] = useState("");
   const [guestEmail, setGuestEmail] = useState("");
-  const [dateError, setDateError] = useState(false);
+  const [guestMessage, setGuestMessage] = useState("");
+  const [messageError, setMessageError] = useState(false);
+  const [dateError, setDateError] = useState<"unavailable" | "minimum" | null>(null);
   const [airbnbBlockedDates, setAirbnbBlockedDates] = useState<string[]>([]);
   const [availabilityStatus, setAvailabilityStatus] = useState<
     "idle" | "loading" | "ready" | "error"
@@ -65,9 +77,9 @@ export function BookingCalendar({
     if (!isOpen) return;
 
     const controller = new AbortController();
-    if (!AVAILABILITY_API_URL) return () => controller.abort();
+    if (!availabilityUrl) return () => controller.abort();
 
-    void fetch(`${AVAILABILITY_API_URL.replace(/\/+$/, "")}/availability`, {
+    void fetch(`${availabilityUrl.replace(/\/+$/, "")}/availability`, {
       signal: controller.signal,
     })
       .then(async (response) => {
@@ -82,7 +94,7 @@ export function BookingCalendar({
       });
 
     return () => controller.abort();
-  }, [isOpen, availabilityAttempt]);
+  }, [isOpen, availabilityAttempt, availabilityUrl]);
 
   const monthLabel = new Intl.DateTimeFormat(language, {
     month: "long",
@@ -104,11 +116,11 @@ export function BookingCalendar({
   });
 
   function chooseDate(value: string) {
-    setDateError(false);
+    setDateError(null);
     const choosingArrival = !arrival || Boolean(departure);
     if (choosingArrival) {
       if (blocked.has(value)) {
-        setDateError(true);
+        setDateError("unavailable");
         return;
       }
       setArrival(value);
@@ -125,7 +137,12 @@ export function BookingCalendar({
     }
 
     if (hasBlockedDate(arrival, value, blocked)) {
-      setDateError(true);
+      setDateError("unavailable");
+      return;
+    }
+
+    if (nightsBetween(arrival, value) < minNights) {
+      setDateError("minimum");
       return;
     }
 
@@ -135,6 +152,11 @@ export function BookingCalendar({
 
   async function submitRequest(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (!guestMessage.trim()) {
+      setMessageError(true);
+      return;
+    }
+    setMessageError(false);
     if (
       availabilityStatus !== "ready" ||
       !arrival ||
@@ -152,6 +174,7 @@ export function BookingCalendar({
       payload.set("property", propertyName);
       payload.set("name", name);
       payload.set("email", guestEmail);
+      payload.set("message", guestMessage.trim());
       payload.set("arrival", arrival);
       payload.set("departure", departure);
 
@@ -175,10 +198,11 @@ export function BookingCalendar({
   }
 
   function openCalendar() {
-    setAvailabilityStatus(AVAILABILITY_API_URL ? "loading" : "error");
+    setAvailabilityStatus(availabilityUrl ? "loading" : "error");
     setArrival("");
     setDeparture("");
-    setDateError(false);
+    setDateError(null);
+    setMessageError(false);
     setSubmissionStatus("idle");
     setIsOpen(true);
   }
@@ -290,7 +314,10 @@ export function BookingCalendar({
                   const disabled =
                     isPast ||
                     availabilityStatus !== "ready" ||
-                    (choosingArrival && isBlocked);
+                    (choosingArrival && isBlocked) ||
+                    (!choosingArrival &&
+                      value > arrival &&
+                      nightsBetween(arrival, value) < minNights);
 
                   return (
                     <button
@@ -334,9 +361,19 @@ export function BookingCalendar({
                   ? t("property.booking.chooseDeparture")
                   : t("property.booking.chooseArrival")}
             </p>
+            {minNights > 1 && (
+              <p className="mt-2 text-sm opacity-75">
+                {t("property.booking.minimumStay", { count: minNights })}
+              </p>
+            )}
             {dateError && (
               <p role="alert" className="mt-2 text-sm font-medium text-red-800">
-                {t("property.booking.dateUnavailable")}
+                {t(
+                  dateError === "minimum"
+                    ? "property.booking.minimumStayError"
+                    : "property.booking.dateUnavailable",
+                  { count: minNights },
+                )}
               </p>
             )}
 
@@ -378,6 +415,25 @@ export function BookingCalendar({
                   className="mt-1 h-12 w-full rounded-xl border-0 bg-white px-4 ring-1 ring-navy/15 focus:ring-2 focus:ring-navy"
                 />
               </label>
+              <label className="block text-sm font-medium">
+                {t("property.booking.message")}
+                <textarea
+                  required
+                  rows={4}
+                  maxLength={3000}
+                  value={guestMessage}
+                  onChange={(event) => {
+                    setGuestMessage(event.target.value);
+                    if (event.target.value.trim()) setMessageError(false);
+                  }}
+                  className="mt-1 w-full resize-y rounded-xl border-0 bg-white px-4 py-3 ring-1 ring-navy/15 focus:ring-2 focus:ring-navy"
+                />
+              </label>
+              {messageError && (
+                <p role="alert" className="text-sm font-medium text-red-800">
+                  {t("property.booking.messageRequired")}
+                </p>
+              )}
               <button
                 type="submit"
                 disabled={

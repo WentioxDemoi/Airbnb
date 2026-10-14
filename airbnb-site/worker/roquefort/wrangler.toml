@@ -1,0 +1,7 @@
+name = "casa-azur-availability-roquefort"
+main = "../index.js"
+compatibility_date = "2026-10-14"
+workers_dev = true
+
+[vars]
+AIRBNB_ICAL_SECRET_NAME = "AIRBNB_ICAL_URL_ROQUEFORT"

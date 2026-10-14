@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { AmenityList } from "./AmenityList";
 import { BookingCalendar } from "./BookingCalendar";
 import { Gallery } from "./Gallery";
-import { SITE_NAME } from "../config";
+import { AVAILABILITY_API_URLS, SITE_NAME } from "../config";
 import type { LangCode } from "../i18n";
 import type { Property, PropertyDetail as Detail } from "../data/properties";
 
@@ -98,6 +98,8 @@ export function PropertyDetail({ property, detail }: { property: Property; detai
             <BookingCalendar
               propertyName={text.title}
               blockedDates={detail.booking.blockedDates}
+              availabilityUrl={AVAILABILITY_API_URLS[property.id]}
+              minNights={detail.booking.minimumNights}
             />
           </div>
         </aside>
@@ -110,6 +112,8 @@ export function PropertyDetail({ property, detail }: { property: Property; detai
         <BookingCalendar
           propertyName={text.title}
           blockedDates={detail.booking.blockedDates}
+          availabilityUrl={AVAILABILITY_API_URLS[property.id]}
+          minNights={detail.booking.minimumNights}
         />
       </div>
     </article>

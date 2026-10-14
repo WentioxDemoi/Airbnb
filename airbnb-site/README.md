@@ -11,15 +11,18 @@ directement à Formspree.
 
 1. Installer Wrangler ou utiliser `npx wrangler`, puis s’authentifier avec
    `npx wrangler login`.
-2. Depuis `airbnb-site/worker`, enregistrer le lien iCal privé en tant que
-   secret Cloudflare et déployer le Worker :
+2. Déployer séparément chaque Worker depuis son dossier, en utilisant le flux
+   iCal correspondant à ce logement :
 
    ```sh
-   npx wrangler secret put AIRBNB_ICAL_URL
+   cd airbnb-site/worker/nice
+   npx wrangler secret put AIRBNB_ICAL_URL_NICE
+   npx wrangler deploy
+
+   cd ../roquefort
+   npx wrangler secret put AIRBNB_ICAL_URL_ROQUEFORT
    npx wrangler deploy
    ```
-
-   VALUE SECRET pour Wrangler : PourAirBnB
 
    Coller le lien iCal uniquement dans l’invite interactive de Wrangler. Ne
    pas le mettre dans le code, dans une variable GitHub Actions, ni dans un
@@ -31,6 +34,8 @@ directement à Formspree.
    Actions > Variables**, créer les variables suivantes :
    - `VITE_AVAILABILITYNICE_API_URL` : origine `workers.dev` du Worker, sans
      `/availability` à la fin.
+   - `VITE_AVAILABILITYROQUEFORT_API_URL` : origine `workers.dev` du Worker
+     Roquefort, sans `/availability` à la fin.
    - `VITE_FORMSPREE_FORM_ID` : identifiant du formulaire Formspree.
 5. Relancer le déploiement GitHub Pages. À l’ouverture du calendrier, le site
    récupère les indisponibilités iCal ; les séjours sont envoyés à Formspree
@@ -38,13 +43,14 @@ directement à Formspree.
    le propriétaire. Les disponibilités sont mises en cache 10 minutes côté
    Worker, en plus du délai de mise à jour éventuel d’Airbnb.
 
-Pour tester localement, copier `.env.example` vers `.env.local` et y renseigner
-les deux valeurs publiques de configuration. Ne jamais y placer le lien iCal.
+Pour tester localement, renseigner ces variables publiques dans `.env.local`.
+Ne jamais y placer un lien iCal.
 
 Les dates ajoutées manuellement dans `booking.blockedDates` de
 `src/data/properties.ts` s’ajoutent aux dates du flux iCal. Si le flux ne peut
 pas être lu, le calendrier refuse les demandes plutôt que d’afficher des
-disponibilités potentiellement incorrectes.
+disponibilités potentiellement incorrectes. La villa de Roquefort impose
+également un séjour minimum de 14 nuits, appliqué par le calendrier.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
