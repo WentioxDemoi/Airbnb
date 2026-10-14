@@ -13,9 +13,6 @@ interface Experience {
   id: string;
   image: string;
   imageCredit: {
-    author: string;
-    license: string;
-    licenseUrl: string;
     file: string;
   };
   imageAlt: Record<LangCode, string>;
@@ -27,9 +24,6 @@ export const experiences: Experience[] = [
     id: "nice",
     image: "photos/experiences/nice-vieux-nice.jpg",
     imageCredit: {
-      author: "Leicester Holyday",
-      license: "CC BY 3.0",
-      licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
       file: "View from Château de Nice across the old town and the Baie des Anges - panoramio (1).jpg",
     },
     imageAlt: {
@@ -106,9 +100,6 @@ export const experiences: Experience[] = [
     id: "eze",
     image: "photos/experiences/eze-village.jpg",
     imageCredit: {
-      author: "Tobi 87",
-      license: "CC BY-SA 3.0",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
       file: "Èze und Cap Ferrat-Grande Corniche.jpg",
     },
     imageAlt: {
@@ -185,9 +176,6 @@ export const experiences: Experience[] = [
     id: "monaco",
     image: "photos/experiences/monaco-port-hercule.jpg",
     imageCredit: {
-      author: "Jorge Láscar",
-      license: "CC BY 2.0",
-      licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
       file: "Port Hercule (50326976527).jpg",
     },
     imageAlt: {
@@ -264,9 +252,6 @@ export const experiences: Experience[] = [
     id: "antibes",
     image: "photos/experiences/antibes-port.jpg",
     imageCredit: {
-      author: "Evgenii Novikov",
-      license: "CC BY-SA 4.0",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
       file: "Антиб. Вид на порт Вобан и старый город.jpg",
     },
     imageAlt: {
@@ -343,9 +328,6 @@ export const experiences: Experience[] = [
     id: "cannes",
     image: "photos/experiences/cannes-port.jpg",
     imageCredit: {
-      author: "Jorge Láscar",
-      license: "CC BY 2.0",
-      licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
       file: "Vieux Port de Cannes (50519003602).jpg",
     },
     imageAlt: {
@@ -422,9 +404,6 @@ export const experiences: Experience[] = [
     id: "saint-paul",
     image: "photos/experiences/saint-paul-de-vence.jpg",
     imageCredit: {
-      author: "Frantogian",
-      license: "CC BY-SA 3.0",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
       file: "Saint-Paul-de-Vence view.jpg",
     },
     imageAlt: {
@@ -501,9 +480,6 @@ export const experiences: Experience[] = [
     id: "grasse",
     image: "photos/experiences/grasse-perfume-museum.jpg",
     imageCredit: {
-      author: "Dennis G. Jarvis",
-      license: "CC BY-SA 2.0",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
       file: "France-002800 - Perfume Factory (15977938866).jpg",
     },
     imageAlt: {
@@ -580,9 +556,6 @@ export const experiences: Experience[] = [
     id: "verdon",
     image: "photos/experiences/verdon-lake.jpg",
     imageCredit: {
-      author: "Olivier Cleynen",
-      license: "CC BY 4.0",
-      licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
       file: "Aerial view of the Lake of Sainte-Croix 03.jpg",
     },
     imageAlt: {

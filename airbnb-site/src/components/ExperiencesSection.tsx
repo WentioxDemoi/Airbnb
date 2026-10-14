@@ -115,27 +115,6 @@ export default function ExperiencesSection() {
                 <span>{selectedContent.location}</span>
                 <span>{selectedContent.duration}</span>
               </div>
-              <p className="mt-3 text-xs opacity-65">
-                {t("home.experiences.photoCredit", {
-                  author: selected.imageCredit.author,
-                })}{" "}
-                <a
-                  href={selected.imageCredit.licenseUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline underline-offset-2 hover:opacity-100"
-                >
-                  {selected.imageCredit.license}
-                </a>{" "}
-                <a
-                  href={imageSourceUrl(selected.imageCredit.file)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline underline-offset-2 hover:opacity-100"
-                >
-                  Wikimedia Commons
-                </a>
-              </p>
               <p className="mt-5 text-lg leading-relaxed">{selectedContent.summary}</p>
               <ul className="mt-5 list-disc space-y-3 pl-5 leading-relaxed marker:text-gold">
                 {selectedContent.details.map((detail) => (
