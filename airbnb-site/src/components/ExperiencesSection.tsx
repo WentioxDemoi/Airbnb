@@ -4,10 +4,6 @@ import { BASE } from "../config";
 import { experiences } from "../data/experiences";
 import type { LangCode } from "../i18n";
 
-function imageSourceUrl(file: string) {
-  return `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file).replaceAll("%20", "_")}`;
-}
-
 export default function ExperiencesSection() {
   const { t, i18n } = useTranslation();
   const language = (i18n.resolvedLanguage ?? "en") as LangCode;
