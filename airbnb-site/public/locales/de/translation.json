@@ -5,7 +5,15 @@
   "home": {
     "title": "Urlaub an der Côte d'Azur",
     "subtitle": "Wähle deine Unterkunft",
-    "view": "{{name}} ansehen"
+    "view": "{{name}} ansehen",
+    "experiences": {
+      "eyebrow": "Entdecken",
+      "title": "Die Côte d’Azur erleben",
+      "subtitle": "Bergdörfer, bekannte Städte, Meer und Hinterland: ein paar Ideen, damit du deinen Aufenthalt voll auskosten kannst.",
+      "discover": "Aktivität entdecken",
+      "close": "Details schließen",
+      "photoCredit": "Foto: {{author}} ·"
+    }
   },
   "nav": {
     "back": "← Zurück"

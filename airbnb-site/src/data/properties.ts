@@ -29,9 +29,14 @@ export interface PropertyDetail {
 export interface Property {
   id: string;
   name: string;
+  localizedNames?: Partial<Record<LangCode, string>>;
   city: string;
   photos: string[];
   detail?: PropertyDetail;
+}
+
+export function getPropertyName(property: Property, language: LangCode) {
+  return property.localizedNames?.[language] ?? property.name;
 }
 
 const photoFiles = (count: number) => Array.from({ length: count }, (_, i) => `${i + 1}.jpeg`);
@@ -40,6 +45,13 @@ export const properties: Property[] = [
   {
     id: "nice-centre",
     name: "Nice Centre",
+    localizedNames: {
+      fr: "Nice Centre",
+      en: "Central Nice Apartment",
+      it: "Appartamento nel centro di Nizza",
+      es: "Apartamento en el centro de Niza",
+      de: "Apartment im Zentrum von Nizza",
+    },
     city: "Nice",
     photos: photoFiles(9),
     detail: {
@@ -161,6 +173,13 @@ export const properties: Property[] = [
   {
     id: "roquefort",
     name: "Villa familiale avec piscine",
+    localizedNames: {
+      fr: "Villa avec piscine",
+      en: "Family Villa with Pool",
+      it: "Villa familiare con piscina",
+      es: "Villa familiar con piscina",
+      de: "Familienvilla mit Pool",
+    },
     city: "Roquefort-les-Pins",
     photos: photoFiles(25),
     detail: {
@@ -180,7 +199,7 @@ export const properties: Property[] = [
       ],
       location: { lat: 43.67, lng: 7.046 },
       bookingUrl: "https://www.airbnb.com/rooms/7259365",
-      booking: { blockedDates: [], minimumNights: 14 },
+      booking: { blockedDates: [], minimumNights: 13 },
       registration: "061052022017",
       content: {
         fr: {
@@ -286,5 +305,4 @@ export const properties: Property[] = [
       },
     },
   },
-  { id: "bien-3", name: "Bien 3", city: "Côte d'Azur", photos: photoFiles(3) },
 ];

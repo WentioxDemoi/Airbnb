@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion, useReducedMotion } from "motion/react";
 import { BASE } from "../config";
-import type { Property } from "../data/properties";
+import { getPropertyName, type Property } from "../data/properties";
+import type { LangCode } from "../i18n";
 
 function PhotoCarousel({ property, index }: { property: Property; index: number }) {
   const [current, setCurrent] = useState(0);
@@ -47,7 +48,9 @@ function PhotoCarousel({ property, index }: { property: Property; index: number 
 }
 
 export function PropertyCard({ property, index }: { property: Property; index: number }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const language = (i18n.resolvedLanguage ?? "en") as LangCode;
+  const name = getPropertyName(property, language);
   return (
     <motion.li
       initial={{ opacity: 0, y: 24 }}
@@ -57,11 +60,11 @@ export function PropertyCard({ property, index }: { property: Property; index: n
     >
       <Link
         to={`/bien/${property.id}`}
-        aria-label={t("home.view", { name: property.name })}
+        aria-label={t("home.view", { name })}
         className="group block active:scale-[0.98]"
       >
         <PhotoCarousel property={property} index={index} />
-        <h2 className="mt-4 font-display text-2xl">{property.name}</h2>
+        <h2 className="mt-4 font-display text-2xl">{name}</h2>
         <p className="opacity-70">{property.city}</p>
       </Link>
     </motion.li>

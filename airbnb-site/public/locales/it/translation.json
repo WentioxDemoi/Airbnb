@@ -5,7 +5,15 @@
   "home": {
     "title": "Soggiorna in Costa Azzurra",
     "subtitle": "Scegli il tuo alloggio",
-    "view": "Vedi {{name}}"
+    "view": "Vedi {{name}}",
+    "experiences": {
+      "eyebrow": "Da scoprire",
+      "title": "Vivi la Costa Azzurra",
+      "subtitle": "Borghi arroccati, città iconiche, mare ed entroterra: qualche idea per goderti al meglio il soggiorno.",
+      "discover": "Scopri l’attività",
+      "close": "Chiudi i dettagli",
+      "photoCredit": "Foto: {{author}} ·"
+    }
   },
   "nav": {
     "back": "← Indietro"

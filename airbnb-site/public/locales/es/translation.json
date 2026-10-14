@@ -5,7 +5,15 @@
   "home": {
     "title": "Alójate en la Costa Azul",
     "subtitle": "Elige tu alojamiento",
-    "view": "Ver {{name}}"
+    "view": "Ver {{name}}",
+    "experiences": {
+      "eyebrow": "Descubre",
+      "title": "Vive la Costa Azul",
+      "subtitle": "Pueblos encaramados, ciudades emblemáticas, costa y naturaleza: algunas ideas para disfrutar al máximo de tu estancia.",
+      "discover": "Descubrir la actividad",
+      "close": "Cerrar detalles",
+      "photoCredit": "Foto: {{author}} ·"
+    }
   },
   "nav": {
     "back": "← Volver"

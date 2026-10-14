@@ -5,7 +5,15 @@
   "home": {
     "title": "Séjournez sur la Côte d'Azur",
     "subtitle": "Choisissez votre logement",
-    "view": "Voir {{name}}"
+    "view": "Voir {{name}}",
+    "experiences": {
+      "eyebrow": "À découvrir",
+      "title": "La Côte d’Azur à votre rythme",
+      "subtitle": "Villages perchés, villes emblématiques, mer et arrière-pays : voici quelques idées pour profiter pleinement de votre séjour.",
+      "discover": "Découvrir l’activité",
+      "close": "Fermer les détails",
+      "photoCredit": "Photo : {{author}} ·"
+    }
   },
   "nav": {
     "back": "← Retour"

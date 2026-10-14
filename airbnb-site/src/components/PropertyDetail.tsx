@@ -5,13 +5,14 @@ import { BookingCalendar } from "./BookingCalendar";
 import { Gallery } from "./Gallery";
 import { AVAILABILITY_API_URLS, SITE_NAME } from "../config";
 import type { LangCode } from "../i18n";
-import type { Property, PropertyDetail as Detail } from "../data/properties";
+import { getPropertyName, type Property, type PropertyDetail as Detail } from "../data/properties";
 
 // Fiche d'un bien : entièrement pilotée par les données de properties.ts.
 export function PropertyDetail({ property, detail }: { property: Property; detail: Detail }) {
   const { t, i18n } = useTranslation();
   const lang = (i18n.resolvedLanguage ?? "en") as LangCode;
   const text = detail.content[lang] ?? detail.content.en;
+  const propertyName = getPropertyName(property, lang);
   const { facts, location } = detail;
 
   useEffect(() => {
@@ -93,7 +94,7 @@ export function PropertyDetail({ property, detail }: { property: Property; detai
 
         <aside className="hidden lg:block">
           <div className="sticky top-6 rounded-3xl bg-white p-6 ring-1 ring-navy/10">
-            <p className="font-display text-2xl">{property.name}</p>
+            <p className="font-display text-2xl">{propertyName}</p>
             <p className="mb-5 opacity-70">{property.city}</p>
             <BookingCalendar
               propertyName={text.title}

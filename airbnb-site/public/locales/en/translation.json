@@ -5,7 +5,15 @@
   "home": {
     "title": "Stay on the French Riviera",
     "subtitle": "Choose your accommodation",
-    "view": "View {{name}}"
+    "view": "View {{name}}",
+    "experiences": {
+      "eyebrow": "Explore",
+      "title": "Experience the French Riviera",
+      "subtitle": "Hilltop villages, iconic towns, the coast and the countryside: here are a few ideas to make the most of your stay.",
+      "discover": "Explore this activity",
+      "close": "Close details",
+      "photoCredit": "Photo: {{author}} ·"
+    }
   },
   "nav": {
     "back": "← Back"

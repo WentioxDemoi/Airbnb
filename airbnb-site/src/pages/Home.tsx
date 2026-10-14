@@ -1,7 +1,10 @@
+import { lazy, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import { Logo } from "../components/Logo";
 import { PropertyCard } from "../components/PropertyCard";
 import { properties } from "../data/properties";
+
+const ExperiencesSection = lazy(() => import("../components/ExperiencesSection"));
 
 export default function Home() {
   const { t } = useTranslation();
@@ -17,6 +20,9 @@ export default function Home() {
           <PropertyCard key={p.id} property={p} index={i} />
         ))}
       </ul>
+      <Suspense fallback={null}>
+        <ExperiencesSection />
+      </Suspense>
     </main>
   );
 }
