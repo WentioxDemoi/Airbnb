@@ -1,5 +1,51 @@
 # React + TypeScript + Vite
 
+## Réservations
+
+Le site est hébergé sur GitHub Pages. Le calendrier lit uniquement les dates
+occupées depuis un Cloudflare Worker ; l’URL iCal Airbnb reste dans un secret
+Cloudflare et n’est jamais envoyée au navigateur. Les demandes sont envoyées
+directement à Formspree.
+
+### Déployer le calendrier iCal
+
+1. Installer Wrangler ou utiliser `npx wrangler`, puis s’authentifier avec
+   `npx wrangler login`.
+2. Depuis `airbnb-site/worker`, enregistrer le lien iCal privé en tant que
+   secret Cloudflare et déployer le Worker :
+
+   ```sh
+   npx wrangler secret put AIRBNB_ICAL_URL
+   npx wrangler deploy
+   ```
+
+   VALUE SECRET pour Wrangler : PourAirBnB
+
+   Coller le lien iCal uniquement dans l’invite interactive de Wrangler. Ne
+   pas le mettre dans le code, dans une variable GitHub Actions, ni dans un
+   fichier `.env` destiné au build du site.
+3. Dans Formspree, créer un formulaire et configurer
+   `nice.ruederussie@gmail.com` comme adresse destinataire des notifications.
+   Copier l’identifiant du formulaire.
+4. Dans les paramètres du dépôt GitHub, sous **Secrets and variables >
+   Actions > Variables**, créer les variables suivantes :
+   - `VITE_AVAILABILITYNICE_API_URL` : origine `workers.dev` du Worker, sans
+     `/availability` à la fin.
+   - `VITE_FORMSPREE_FORM_ID` : identifiant du formulaire Formspree.
+5. Relancer le déploiement GitHub Pages. À l’ouverture du calendrier, le site
+   récupère les indisponibilités iCal ; les séjours sont envoyés à Formspree
+   sans ouvrir l’application de messagerie. Une demande reste à confirmer par
+   le propriétaire. Les disponibilités sont mises en cache 10 minutes côté
+   Worker, en plus du délai de mise à jour éventuel d’Airbnb.
+
+Pour tester localement, copier `.env.example` vers `.env.local` et y renseigner
+les deux valeurs publiques de configuration. Ne jamais y placer le lien iCal.
+
+Les dates ajoutées manuellement dans `booking.blockedDates` de
+`src/data/properties.ts` s’ajoutent aux dates du flux iCal. Si le flux ne peut
+pas être lu, le calendrier refuse les demandes plutôt que d’afficher des
+disponibilités potentiellement incorrectes.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

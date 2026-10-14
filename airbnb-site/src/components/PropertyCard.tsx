@@ -8,7 +8,8 @@ import type { Property } from "../data/properties";
 function PhotoCarousel({ property, index }: { property: Property; index: number }) {
   const [current, setCurrent] = useState(0);
   const reduceMotion = useReducedMotion();
-  const count = property.photos.length;
+  const photos = property.photos.slice(0, 4); // les 4 premières suffisent pour la carte
+  const count = photos.length;
 
   useEffect(() => {
     if (reduceMotion || count < 2) return;
@@ -19,7 +20,7 @@ function PhotoCarousel({ property, index }: { property: Property; index: number 
 
   return (
     <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-gradient-to-br from-navy to-navy/60">
-      {property.photos.map((file, i) => (
+      {photos.map((file, i) => (
         <img
           key={file}
           src={`${BASE}photos/${property.id}/${file}`}
@@ -33,7 +34,7 @@ function PhotoCarousel({ property, index }: { property: Property; index: number 
       ))}
       {count > 1 && (
         <div className="absolute inset-x-0 bottom-3 flex justify-center gap-1.5" aria-hidden="true">
-          {property.photos.map((file, i) => (
+          {photos.map((file, i) => (
             <span
               key={file}
               className={`h-1.5 rounded-full bg-white transition-all ${i === current ? "w-5" : "w-1.5 opacity-60"}`}

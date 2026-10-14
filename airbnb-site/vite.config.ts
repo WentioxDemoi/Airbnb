@@ -1,9 +1,10 @@
-import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 
-// https://vite.dev/config/
+// base "./" : les chemins restent relatifs, le site marche à la racine
+// (username.github.io) comme dans un sous-dossier (username.github.io/repo).
 export default defineConfig({
+  base: "./",
   plugins: [react(), tailwindcss()],
-  base: '/Airbnb/'
-})
+});

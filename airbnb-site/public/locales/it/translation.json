@@ -1,1 +1,96 @@
-{"lang":{"change":"Cambia lingua"},"home":{"title":"Soggiorna in Costa Azzurra","subtitle":"Scegli il tuo alloggio","view":"Vedi {{name}}"},"nav":{"back":"← Indietro"},"property":{"soon":"La scheda dettagliata arriverà presto."}}
+{
+  "lang": {
+    "change": "Cambia lingua"
+  },
+  "home": {
+    "title": "Soggiorna in Costa Azzurra",
+    "subtitle": "Scegli il tuo alloggio",
+    "view": "Vedi {{name}}"
+  },
+  "nav": {
+    "back": "← Indietro"
+  },
+  "property": {
+    "soon": "La scheda dettagliata arriverà presto.",
+    "notFound": "Questo alloggio non esiste.",
+    "book": "Scegli le date",
+    "booking": {
+      "title": "Richiesta di soggiorno",
+      "availabilityNote": "Calendario sincronizzato con Airbnb. La richiesta di soggiorno deve essere confermata via e-mail.",
+      "availabilityLoading": "Caricamento della disponibilità Airbnb…",
+      "availabilityError": "Impossibile caricare la disponibilità. Al momento non è possibile richiedere date.",
+      "retry": "Riprova",
+      "close": "Chiudi",
+      "previousMonth": "Mese precedente",
+      "nextMonth": "Mese successivo",
+      "available": "Disponibile secondo il calendario",
+      "blocked": "Non disponibile",
+      "chooseArrival": "Scegli la data di arrivo.",
+      "chooseDeparture": "Scegli la data di partenza.",
+      "dateUnavailable": "Il periodo include una data non disponibile. Scegli altre date.",
+      "name": "Il tuo nome",
+      "guestEmail": "Il tuo indirizzo e-mail",
+      "sendRequest": "Invia la richiesta",
+      "sending": "Invio in corso…",
+      "sendSuccess": "La tua richiesta è stata inviata. Ti risponderemo presto per confermare il soggiorno.",
+      "sendError": "Impossibile inviare la richiesta. Controlla la connessione e riprova.",
+      "formNotConfigured": "Il modulo di prenotazione non è ancora configurato. Riprova più tardi.",
+      "emailSubject": "Richiesta di soggiorno – {{property}}"
+    },
+    "prevPhoto": "Foto precedente",
+    "nextPhoto": "Foto successiva",
+    "photoAlt": "{{name}}, foto {{n}} di {{total}}",
+    "guests_one": "{{count}} ospite",
+    "guests_other": "{{count}} ospiti",
+    "bedrooms_one": "{{count}} camera da letto",
+    "bedrooms_other": "{{count}} camere da letto",
+    "beds_one": "{{count}} letto",
+    "beds_other": "{{count}} letti",
+    "bathrooms_one": "{{count}} bagno",
+    "bathrooms_other": "{{count}} bagni",
+    "area": "{{count}} m²",
+    "sections": {
+      "space": "L'appartamento",
+      "amenities": "Servizi",
+      "goodToKnow": "Da sapere",
+      "location": "Posizione"
+    },
+    "showAll": "Mostra tutti i {{count}} servizi",
+    "showLess": "Mostra meno",
+    "mapTitle": "Mappa del quartiere",
+    "mapNote": "Posizione approssimativa; l'indirizzo esatto viene comunicato con la prenotazione.",
+    "registration": "Numero di registrazione: {{number}}"
+  },
+  "amenities": {
+    "ac": "Aria condizionata",
+    "kitchen": "Cucina",
+    "heating": "Riscaldamento",
+    "washer": "Lavatrice",
+    "smoke_detector": "Rilevatore di fumo",
+    "essentials": "Dotazioni di base",
+    "hangers": "Grucce",
+    "iron": "Ferro da stiro",
+    "laptop_friendly_workspace": "Spazio di lavoro",
+    "self_checkin": "Check-in autonomo",
+    "lockbox": "Cassetta delle chiavi",
+    "hot_water": "Acqua calda",
+    "body_soap": "Sapone per il corpo",
+    "bed_linens": "Biancheria da letto",
+    "extra_pillows_and_blankets": "Cuscini e coperte extra",
+    "microwave": "Microonde",
+    "coffee_maker": "Macchina del caffè",
+    "refrigerator": "Frigorifero",
+    "dishwasher": "Lavastoviglie",
+    "dishes_and_silverware": "Piatti e posate",
+    "cooking_basics": "Utensili da cucina di base",
+    "oven": "Forno",
+    "hot_water_kettle": "Bollitore",
+    "dining_table": "Tavolo da pranzo",
+    "baking_sheet": "Teglia da forno",
+    "cleaning_products": "Prodotti per la pulizia",
+    "clothes_drying_rack": "Stendibiancheria",
+    "wardrobe_or_closet": "Armadio",
+    "wine_glasses": "Bicchieri da vino",
+    "beach_access": "Spiagge vicine"
+  }
+}

@@ -1,1 +1,96 @@
-{"lang":{"change":"Change language"},"home":{"title":"Stay on the French Riviera","subtitle":"Choose your accommodation","view":"View {{name}}"},"nav":{"back":"← Back"},"property":{"soon":"The detail page is coming soon."}}
+{
+  "lang": {
+    "change": "Change language"
+  },
+  "home": {
+    "title": "Stay on the French Riviera",
+    "subtitle": "Choose your accommodation",
+    "view": "View {{name}}"
+  },
+  "nav": {
+    "back": "← Back"
+  },
+  "property": {
+    "soon": "The detail page is coming soon.",
+    "notFound": "This accommodation doesn't exist.",
+    "book": "Choose dates",
+    "booking": {
+      "title": "Stay request",
+      "availabilityNote": "Calendar synced with Airbnb. Stay requests must be confirmed by email.",
+      "availabilityLoading": "Loading Airbnb availability…",
+      "availabilityError": "Availability could not be loaded. Dates cannot be requested right now.",
+      "retry": "Try again",
+      "close": "Close",
+      "previousMonth": "Previous month",
+      "nextMonth": "Next month",
+      "available": "Available on this calendar",
+      "blocked": "Unavailable",
+      "chooseArrival": "Choose your arrival date.",
+      "chooseDeparture": "Choose your departure date.",
+      "dateUnavailable": "These dates include an unavailable day. Please choose different dates.",
+      "name": "Your name",
+      "guestEmail": "Your email address",
+      "sendRequest": "Send request",
+      "sending": "Sending…",
+      "sendSuccess": "Your request was sent. We’ll get back to you soon to confirm the stay.",
+      "sendError": "The request could not be sent. Check your connection and try again.",
+      "formNotConfigured": "The booking form has not been configured yet. Please try again later.",
+      "emailSubject": "Stay request – {{property}}"
+    },
+    "prevPhoto": "Previous photo",
+    "nextPhoto": "Next photo",
+    "photoAlt": "{{name}}, photo {{n}} of {{total}}",
+    "guests_one": "{{count}} guest",
+    "guests_other": "{{count}} guests",
+    "bedrooms_one": "{{count}} bedroom",
+    "bedrooms_other": "{{count}} bedrooms",
+    "beds_one": "{{count}} bed",
+    "beds_other": "{{count}} beds",
+    "bathrooms_one": "{{count}} bathroom",
+    "bathrooms_other": "{{count}} bathrooms",
+    "area": "{{count}} m²",
+    "sections": {
+      "space": "The apartment",
+      "amenities": "Amenities",
+      "goodToKnow": "Good to know",
+      "location": "Location"
+    },
+    "showAll": "Show all {{count}} amenities",
+    "showLess": "Show less",
+    "mapTitle": "Neighbourhood map",
+    "mapNote": "Approximate location; the exact address is shared when you book.",
+    "registration": "Registration number: {{number}}"
+  },
+  "amenities": {
+    "ac": "Air conditioning",
+    "kitchen": "Kitchen",
+    "heating": "Heating",
+    "washer": "Washing machine",
+    "smoke_detector": "Smoke alarm",
+    "essentials": "Essentials",
+    "hangers": "Hangers",
+    "iron": "Iron",
+    "laptop_friendly_workspace": "Dedicated workspace",
+    "self_checkin": "Self check-in",
+    "lockbox": "Key lockbox",
+    "hot_water": "Hot water",
+    "body_soap": "Body soap",
+    "bed_linens": "Bed linen",
+    "extra_pillows_and_blankets": "Extra pillows and blankets",
+    "microwave": "Microwave",
+    "coffee_maker": "Coffee maker",
+    "refrigerator": "Fridge",
+    "dishwasher": "Dishwasher",
+    "dishes_and_silverware": "Dishes and cutlery",
+    "cooking_basics": "Cooking basics",
+    "oven": "Oven",
+    "hot_water_kettle": "Kettle",
+    "dining_table": "Dining table",
+    "baking_sheet": "Baking sheet",
+    "cleaning_products": "Cleaning products",
+    "clothes_drying_rack": "Clothes drying rack",
+    "wardrobe_or_closet": "Wardrobe",
+    "wine_glasses": "Wine glasses",
+    "beach_access": "Beaches nearby"
+  }
+}

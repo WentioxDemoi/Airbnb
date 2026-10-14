@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Airbnb User Data</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Bootstrap table -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" >
+    <link href="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table-locale-all.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.21.4/dist/extensions/export/bootstrap-table-export.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+          pre {
+            max-height: 250px;
+          }
+          .subTableCell {
+            padding-left: 30px !important;
+            border-right: none;
+            border-left: none;
+          }
+          .table td {
+            max-width: 200px;
+          }
+    </style>
+  </head>
+  <body>
+    <div class="fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #FF5A5F;">
+        <div class="container">
+          <a class="navbar-brand" href="../readme.html">Your Airbnb Data</a>
+        </div>
+      </nav>
+      <div class="container" style="background-color: white;">
+        <ol class="breadcrumb">
+          <li class="navbar-brand breadcrumb-item" style="padding-left: 20px"><a href="../readme.html">Home</a></li>
+          <li class="navbar-brand breadcrumb-item active">Host quick replies</li>
+        </ol>
+      </div>
+    </div>
+    <div class="container my-5 pt-5" id="root">
+      <div class="col-lg-12 px-0">
+        <h1 id="title">Host quick replies</h1>
+        <p id="subtitle" class="fs-5">Information about your saved quick reply templates</p>
+        <hr class="col-12 my-4">
+            <h2>Templates</h2>
+            <table
+              data-toggle="table"
+              data-search="true"
+              data-locale="en-US"
+              data-show-toggle="true"
+              data-show-fullscreen="true"
+              data-show-columns="true"
+              data-show-columns-toggle-all="true"
+              data-show-export="true"
+              data-minimum-count-columns="2"
+              data-pagination="true"
+              data-page-list="[25, 50, 100, all]"
+              data-toolbar="#toolbar">
+                  <thead>
+                    <tr>
+                         <th>Texts</th>
+                         <th>Entities</th>
+                         <th>Template Message</th>
+                    </tr>
+                  </thead>
+                <tbody>
+                      <tr>
+                          <td><pre>[{&quot;message&quot;:&quot;Merci pour votre séjour chez nous ! Le logement doit être libéré à #{CHECK_OUT_TIME}. Voici la procédure à suivre.&quot;,&quot;locale&quot;:&quot;fr&quot;}]</pre></td>
+                          <td><pre>See subtable below</pre></td>
+                          <td><pre>{&quot;title&quot;:&quot;Instructions de départ&quot;,&quot;userId&quot;:437626312}</pre></td>
+                      </tr>
+                          <tr>
+                            <td class="subTableCell" colspan="2" style="min-width: 430px">
+                              <h4>Entities</h4>
+                              <table class="table table-bordered" style="background-color: #e9ecef50; min-width: 400px">
+                                <thead>
+                                  <tr>
+                                       <th><div class="th-inner">Entity Type</div></th>
+                                       <th><div class="th-inner">Entity Id</div></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><pre>LISTING</pre></td>
+                                        <td><pre>54009581</pre></td>
+                                    </tr>
+                                    <tr>
+                                        <td><pre>LISTING</pre></td>
+                                        <td><pre>905103964179712046</pre></td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                      <tr>
+                          <td><pre>[{&quot;message&quot;:&quot;SSID : #{WIFI_NAME} Mot de passe : #{WIFI_PASSWORD}&quot;,&quot;locale&quot;:&quot;fr&quot;}]</pre></td>
+                          <td><pre>See subtable below</pre></td>
+                          <td><pre>{&quot;title&quot;:&quot;Wifi&quot;,&quot;userId&quot;:437626312}</pre></td>
+                      </tr>
+                          <tr>
+                            <td class="subTableCell" colspan="2" style="min-width: 430px">
+                              <h4>Entities</h4>
+                              <table class="table table-bordered" style="background-color: #e9ecef50; min-width: 400px">
+                                <thead>
+                                  <tr>
+                                       <th><div class="th-inner">Entity Type</div></th>
+                                       <th><div class="th-inner">Entity Id</div></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><pre>LISTING</pre></td>
+                                        <td><pre>54009581</pre></td>
+                                    </tr>
+                                    <tr>
+                                        <td><pre>LISTING</pre></td>
+                                        <td><pre>905103964179712046</pre></td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                      <tr>
+                          <td><pre>[{&quot;message&quot;:&quot;Bonjour #{GUEST_FIRST_NAME},\n\nMerci d’avoir choisi notre logement pour votre séjour sur la Côte d’Azur, nous espérons que vous y avez passé un bon moment.\n\nUne petite précision concernant les poubelles.\nVous avez à votre disposition un local à poubelles accessible grâce au badge vigik sur vos clefs.\nIl se situe à droite en sortant de l&#39;immeuble après l&#39;assurance Gan.\n\nVoici un petit rappel pour le départ:\n(Heure départ) avant 10.00\n\nN’oubliez pas de fermer la porte avec les deux serrures, de laisser la clef dans la boîte à clef sécurisée et raccrocher le cadenas sur la porte.\nNous envoyer un petit message pour confirmer.\n\nNous vous souhaitons un excellent retour.\n\nBien à vous,\n\nRémi&quot;,&quot;locale&quot;:&quot;fr&quot;}]</pre></td>
+                          <td><pre>[{&quot;entityType&quot;:&quot;LISTING&quot;,&quot;entityId&quot;:54009581}]</pre></td>
+                          <td><pre>{&quot;title&quot;:&quot;Message de depart&quot;,&quot;userId&quot;:437626312}</pre></td>
+                      </tr>
+                      <tr>
+                          <td><pre>[{&quot;message&quot;:&quot;Bonjour #{GUEST_FIRST_NAME},\n\nQuand vous arriverez devant la porte de l’immeuble au 7 rue de Russie le digicode sera à gauche (regarder la procédure d’arrivée), le code est 53535. Il faut taper \&quot;clé + code + valider\&quot;\n\nEnsuite vous monterez au quatrième étage et la porte est la troisième sur la droite, vous trouverez une boîte à clés accrochée sur la porte.\nLe code est le 1968\nMerci de penser à enlever le cadenas sur la porte et le ranger à l&#39;intérieur de l&#39;appartement durant la durée de votre séjour.\n\nVous aurez la clé du haut et la clé du bas à ouvrir en tournant 2 fois.\n\nSi vous avez le moindre souci, n’hésitez pas à me demander où à m’appeler au +33 7 81 11 97 95\n\nVous pouvez regarder la procédure d&#39;arrivée afin de vous y retrouver plus facilement.\n\nConfirmez moi lorsque vous serez arrivés  et profitez bien de votre séjour.\n\nMerci d&#39;avance\n\nBien cordialement,\n\nRémi&quot;,&quot;locale&quot;:&quot;fr&quot;}]</pre></td>
+                          <td><pre>[{&quot;entityType&quot;:&quot;LISTING&quot;,&quot;entityId&quot;:54009581}]</pre></td>
+                          <td><pre>{&quot;title&quot;:&quot;Message d’arrivée &quot;,&quot;userId&quot;:437626312}</pre></td>
+                      </tr>
+                      <tr>
+                          <td><pre>[{&quot;message&quot;:&quot;Bonjour #{GUEST_FIRST_NAME}, merci pour votre réservation.\n\nJe vous enverrai les informations nécessaires avant votre arrivée. \n\nD&#39;ici là, n&#39;hésitez pas à me contacter si vous avez des questions ou besoin de recommandations. Au plaisir de vous accueillir !&quot;,&quot;locale&quot;:&quot;fr&quot;}]</pre></td>
+                          <td><pre></pre></td>
+                          <td><pre>{&quot;title&quot;:&quot;Confirmation de réservation&quot;,&quot;userId&quot;:437626312}</pre></td>
+                      </tr>
+                      <tr>
+                          <td><pre>[{&quot;message&quot;:&quot;Bonjour #{GUEST_FIRST_NAME}, j&#39;espère que votre installation s&#39;est bien passée et que vous appréciez votre séjour. \n\nN&#39;hésitez pas à me contacter si vous avez besoin de quoi que ce soit.&quot;,&quot;locale&quot;:&quot;fr&quot;}]</pre></td>
+                          <td><pre></pre></td>
+                          <td><pre>{&quot;title&quot;:&quot;Après la première nuit&quot;,&quot;userId&quot;:437626312}</pre></td>
+                      </tr>
+                      <tr>
+                          <td><pre>[{&quot;message&quot;:&quot;Bien sûr #{GUEST_FIRST_NAME}, cette heure d&#39;arrivée me convient.&quot;,&quot;locale&quot;:&quot;fr&quot;}]</pre></td>
+                          <td><pre></pre></td>
+                          <td><pre>{&quot;title&quot;:&quot;Arrivée anticipée disponible&quot;,&quot;userId&quot;:437626312}</pre></td>
+                      </tr>
+                      <tr>
+                          <td><pre>[{&quot;message&quot;:&quot;Bonjour #{GUEST_FIRST_NAME}, mon calendrier est à jour. Toutes les dates que vous pouvez sélectionner sont disponibles à la réservation. Merci !&quot;,&quot;locale&quot;:&quot;fr&quot;}]</pre></td>
+                          <td><pre></pre></td>
+                          <td><pre>{&quot;title&quot;:&quot;Disponibilités du logement&quot;,&quot;userId&quot;:437626312}</pre></td>
+                      </tr>
+                </tbody>
+            </table>
+      </div>
+    </div>
+    <script>
+      // Reformat all PRE's to format JSON
+      document.querySelectorAll("pre").forEach(pre => {try { pre.innerHTML = JSON.stringify(JSON.parse(pre.innerHTML), undefined, 2) } catch (e) {}});
+    </script>
+  </body>
+</html>

@@ -1,1 +1,96 @@
-{"lang":{"change":"Cambiar idioma"},"home":{"title":"Alójate en la Costa Azul","subtitle":"Elige tu alojamiento","view":"Ver {{name}}"},"nav":{"back":"← Volver"},"property":{"soon":"La ficha detallada llegará pronto."}}
+{
+  "lang": {
+    "change": "Cambiar idioma"
+  },
+  "home": {
+    "title": "Alójate en la Costa Azul",
+    "subtitle": "Elige tu alojamiento",
+    "view": "Ver {{name}}"
+  },
+  "nav": {
+    "back": "← Volver"
+  },
+  "property": {
+    "soon": "La ficha detallada llegará pronto.",
+    "notFound": "Este alojamiento no existe.",
+    "book": "Elegir fechas",
+    "booking": {
+      "title": "Solicitud de estancia",
+      "availabilityNote": "Calendario sincronizado con Airbnb. La solicitud de estancia debe confirmarse por correo electrónico.",
+      "availabilityLoading": "Cargando disponibilidad de Airbnb…",
+      "availabilityError": "No se pudo cargar la disponibilidad. No se pueden solicitar fechas ahora.",
+      "retry": "Intentar de nuevo",
+      "close": "Cerrar",
+      "previousMonth": "Mes anterior",
+      "nextMonth": "Mes siguiente",
+      "available": "Disponible según el calendario",
+      "blocked": "No disponible",
+      "chooseArrival": "Elige la fecha de llegada.",
+      "chooseDeparture": "Elige la fecha de salida.",
+      "dateUnavailable": "El período incluye una fecha no disponible. Elige otras fechas.",
+      "name": "Tu nombre",
+      "guestEmail": "Tu correo electrónico",
+      "sendRequest": "Enviar solicitud",
+      "sending": "Enviando…",
+      "sendSuccess": "Tu solicitud se ha enviado. Pronto nos pondremos en contacto para confirmar la estancia.",
+      "sendError": "No se pudo enviar la solicitud. Comprueba tu conexión e inténtalo de nuevo.",
+      "formNotConfigured": "El formulario de reserva aún no está configurado. Inténtalo más tarde.",
+      "emailSubject": "Solicitud de estancia – {{property}}"
+    },
+    "prevPhoto": "Foto anterior",
+    "nextPhoto": "Foto siguiente",
+    "photoAlt": "{{name}}, foto {{n}} de {{total}}",
+    "guests_one": "{{count}} huésped",
+    "guests_other": "{{count}} huéspedes",
+    "bedrooms_one": "{{count}} dormitorio",
+    "bedrooms_other": "{{count}} dormitorios",
+    "beds_one": "{{count}} cama",
+    "beds_other": "{{count}} camas",
+    "bathrooms_one": "{{count}} baño",
+    "bathrooms_other": "{{count}} baños",
+    "area": "{{count}} m²",
+    "sections": {
+      "space": "El apartamento",
+      "amenities": "Servicios",
+      "goodToKnow": "Conviene saber",
+      "location": "Ubicación"
+    },
+    "showAll": "Ver los {{count}} servicios",
+    "showLess": "Ver menos",
+    "mapTitle": "Mapa del barrio",
+    "mapNote": "Ubicación aproximada; la dirección exacta se facilita al reservar.",
+    "registration": "Número de registro: {{number}}"
+  },
+  "amenities": {
+    "ac": "Aire acondicionado",
+    "kitchen": "Cocina",
+    "heating": "Calefacción",
+    "washer": "Lavadora",
+    "smoke_detector": "Detector de humo",
+    "essentials": "Básicos",
+    "hangers": "Perchas",
+    "iron": "Plancha",
+    "laptop_friendly_workspace": "Espacio de trabajo",
+    "self_checkin": "Llegada autónoma",
+    "lockbox": "Caja de llaves",
+    "hot_water": "Agua caliente",
+    "body_soap": "Jabón corporal",
+    "bed_linens": "Ropa de cama",
+    "extra_pillows_and_blankets": "Almohadas y mantas adicionales",
+    "microwave": "Microondas",
+    "coffee_maker": "Cafetera",
+    "refrigerator": "Nevera",
+    "dishwasher": "Lavavajillas",
+    "dishes_and_silverware": "Vajilla y cubiertos",
+    "cooking_basics": "Utensilios básicos de cocina",
+    "oven": "Horno",
+    "hot_water_kettle": "Hervidor de agua",
+    "dining_table": "Mesa de comedor",
+    "baking_sheet": "Bandeja de horno",
+    "cleaning_products": "Productos de limpieza",
+    "clothes_drying_rack": "Tendedero",
+    "wardrobe_or_closet": "Armario",
+    "wine_glasses": "Copas de vino",
+    "beach_access": "Playas cercanas"
+  }
+}

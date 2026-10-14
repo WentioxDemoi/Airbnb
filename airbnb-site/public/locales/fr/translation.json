@@ -1,1 +1,96 @@
-{"lang":{"change":"Changer de langue"},"home":{"title":"Séjournez sur la Côte d'Azur","subtitle":"Choisissez votre logement","view":"Voir {{name}}"},"nav":{"back":"← Retour"},"property":{"soon":"La fiche détaillée arrive bientôt."}}
+{
+  "lang": {
+    "change": "Changer de langue"
+  },
+  "home": {
+    "title": "Séjournez sur la Côte d'Azur",
+    "subtitle": "Choisissez votre logement",
+    "view": "Voir {{name}}"
+  },
+  "nav": {
+    "back": "← Retour"
+  },
+  "property": {
+    "soon": "La fiche détaillée arrive bientôt.",
+    "notFound": "Ce logement n'existe pas.",
+    "book": "Choisir des dates",
+    "booking": {
+      "title": "Demande de séjour",
+      "availabilityNote": "Calendrier synchronisé avec Airbnb. Une demande de séjour doit être confirmée par e-mail.",
+      "availabilityLoading": "Chargement des disponibilités Airbnb…",
+      "availabilityError": "Impossible de charger les disponibilités. Aucune date ne peut être demandée pour le moment.",
+      "retry": "Réessayer",
+      "close": "Fermer",
+      "previousMonth": "Mois précédent",
+      "nextMonth": "Mois suivant",
+      "available": "Disponible selon le calendrier",
+      "blocked": "Indisponible",
+      "chooseArrival": "Choisissez votre date d’arrivée.",
+      "chooseDeparture": "Choisissez votre date de départ.",
+      "dateUnavailable": "Cette période comprend une date indisponible. Choisissez d’autres dates.",
+      "name": "Votre nom",
+      "guestEmail": "Votre adresse e-mail",
+      "sendRequest": "Envoyer la demande",
+      "sending": "Envoi en cours…",
+      "sendSuccess": "Votre demande a été envoyée. Nous vous répondrons rapidement pour confirmer le séjour.",
+      "sendError": "L’envoi a échoué. Vérifiez votre connexion et réessayez.",
+      "formNotConfigured": "Le formulaire de réservation n’est pas encore configuré. Réessayez plus tard.",
+      "emailSubject": "Demande de séjour – {{property}}"
+    },
+    "prevPhoto": "Photo précédente",
+    "nextPhoto": "Photo suivante",
+    "photoAlt": "{{name}}, photo {{n}} sur {{total}}",
+    "guests_one": "{{count}} voyageur",
+    "guests_other": "{{count}} voyageurs",
+    "bedrooms_one": "{{count}} chambre",
+    "bedrooms_other": "{{count}} chambres",
+    "beds_one": "{{count}} lit",
+    "beds_other": "{{count}} lits",
+    "bathrooms_one": "{{count}} salle de bain",
+    "bathrooms_other": "{{count}} salles de bain",
+    "area": "{{count}} m²",
+    "sections": {
+      "space": "Le logement",
+      "amenities": "Équipements",
+      "goodToKnow": "Bon à savoir",
+      "location": "Emplacement"
+    },
+    "showAll": "Voir les {{count}} équipements",
+    "showLess": "Voir moins",
+    "mapTitle": "Carte du quartier",
+    "mapNote": "Emplacement approximatif ; l'adresse exacte est communiquée à la réservation.",
+    "registration": "Numéro d'enregistrement : {{number}}"
+  },
+  "amenities": {
+    "ac": "Climatisation",
+    "kitchen": "Cuisine",
+    "heating": "Chauffage",
+    "washer": "Lave-linge",
+    "smoke_detector": "Détecteur de fumée",
+    "essentials": "Produits de base",
+    "hangers": "Cintres",
+    "iron": "Fer à repasser",
+    "laptop_friendly_workspace": "Espace de travail",
+    "self_checkin": "Arrivée autonome",
+    "lockbox": "Boîte à clés",
+    "hot_water": "Eau chaude",
+    "body_soap": "Savon pour le corps",
+    "bed_linens": "Linge de lit",
+    "extra_pillows_and_blankets": "Oreillers et couvertures supplémentaires",
+    "microwave": "Micro-ondes",
+    "coffee_maker": "Cafetière",
+    "refrigerator": "Réfrigérateur",
+    "dishwasher": "Lave-vaisselle",
+    "dishes_and_silverware": "Vaisselle et couverts",
+    "cooking_basics": "Ustensiles de cuisine de base",
+    "oven": "Four",
+    "hot_water_kettle": "Bouilloire",
+    "dining_table": "Table à manger",
+    "baking_sheet": "Plaque de cuisson",
+    "cleaning_products": "Produits d'entretien",
+    "clothes_drying_rack": "Étendoir à linge",
+    "wardrobe_or_closet": "Placard",
+    "wine_glasses": "Verres à vin",
+    "beach_access": "Plages à proximité"
+  }
+}

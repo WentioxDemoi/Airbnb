@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Airbnb User Data</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Bootstrap table -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" >
+    <link href="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table-locale-all.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.21.4/dist/extensions/export/bootstrap-table-export.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+          pre {
+            max-height: 250px;
+          }
+          .subTableCell {
+            padding-left: 30px !important;
+            border-right: none;
+            border-left: none;
+          }
+          .table td {
+            max-width: 200px;
+          }
+    </style>
+  </head>
+  <body>
+    <div class="fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #FF5A5F;">
+        <div class="container">
+          <a class="navbar-brand" href="../readme.html">Your Airbnb Data</a>
+        </div>
+      </nav>
+      <div class="container" style="background-color: white;">
+        <ol class="breadcrumb">
+          <li class="navbar-brand breadcrumb-item" style="padding-left: 20px"><a href="../readme.html">Home</a></li>
+          <li class="navbar-brand breadcrumb-item active">Resolution Center Claims</li>
+        </ol>
+      </div>
+    </div>
+    <div class="container my-5 pt-5" id="root">
+      <div class="col-lg-12 px-0">
+        <h1 id="title">Resolution Center Claims</h1>
+        <p id="subtitle" class="fs-5">Claims History about each of your refund requests or claims on the Airbnb resolution center.</p>
+        <hr class="col-12 my-4">
+            <h2>Claim Data</h2>
+            <table
+              data-toggle="table"
+              data-search="true"
+              data-locale="en-US"
+              data-show-toggle="true"
+              data-show-fullscreen="true"
+              data-show-columns="true"
+              data-show-columns-toggle-all="true"
+              data-show-export="true"
+              data-minimum-count-columns="2"
+              data-pagination="true"
+              data-page-list="[25, 50, 100, all]"
+              data-toolbar="#toolbar">
+                  <thead>
+                    <tr>
+                         <th>Reference Id</th>
+                         <th>Claim Overview</th>
+                    </tr>
+                  </thead>
+                <tbody>
+                      <tr>
+                          <td><pre>CLSF-04714182</pre></td>
+                          <td><pre></pre></td>
+                      </tr>
+                      <tr>
+                          <td><pre>CLA-MS8MA3A994</pre></td>
+                          <td><pre>Le voyageur affirme dans son commentaire : &quot;jedoch wurde nie gefragt, wie es uns geht&quot; (il ne lui a jamais été demandé comment il allait).
+
+Or, dans mon message du 23 juillet 2026 à 10:45, visible dans notre conversation Airbnb, j&#39;ai écrit textuellement : &quot;Wir hoffen sehr, dass es Ihnen inzwischen besser geht&quot; (nous espérons sincèrement que vous allez mieux à présent). Ce message a été lu par le voyageur, comme en atteste le statut de lecture visible dans la conversation (capture jointe).
+
+Cette phrase contredit directement l&#39;affirmation du commentaire. Il ne s&#39;agit pas d&#39;une opinion ou d&#39;un désaccord sur une note, mais d&#39;une déclaration factuelle erronée que l&#39;historique de conversation Airbnb permet de vérifier immédiatement.
+
+Je vous remercie d&#39;examiner cet élément et de corriger ou retirer la partie concernée du commentaire.</pre></td>
+                      </tr>
+                      <tr>
+                          <td><pre>CLA-J53ES3NJ25</pre></td>
+                          <td><pre></pre></td>
+                      </tr>
+                      <tr>
+                          <td><pre>CLA-CE4FW8F9JT</pre></td>
+                          <td><pre>Bonjour,
+
+Je conteste l&#39;avis laissé par le voyageur Benjamin (séjour du 19 juillet au 2 août 2026, Cocon de 30m2, Nice centre-ville, Jean Médecin), sur le fondement de contenu trompeur/inexact au sens de votre politique sur les avis authentiques et fiables.
+
+L&#39;avis affirme que je n&#39;ai à aucun moment demandé au voyageur comment il allait ni proposé de l&#39;aide suite à l&#39;agression qu&#39;il a subie à l&#39;extérieur de l&#39;immeuble. Cette affirmation est factuellement inexacte et contredite par l&#39;intégralité de nos échanges, que je joins à cette demande. Ces échanges montrent que :
+
+- j&#39;ai exprimé mon soutien et ma sollicitude à plusieurs reprises, aussi bien en français qu&#39;en allemand (langue du voyageur) pour faciliter la communication ;
+- je me suis rendu personnellement sur place avec le syndic de copropriété pour visionner les vidéos de surveillance ;
+- ces vidéos ont permis l&#39;identification et l&#39;interpellation des agresseurs par la police ;
+- j&#39;ai prévenu l&#39;ensemble des copropriétaires par mesure de précaution suite à cet événement, une première dans la copropriété ;
+- j&#39;ai clarifié à plusieurs reprises la procédure de remboursement flexible dont il pouvait bénéficier.
+
+Ces éléments démontrent que l&#39;affirmation centrale de l&#39;avis, sur laquelle repose la note de 1 étoile sur l&#39;ensemble des critères (alors que notre moyenne est de 4,8), est mensongère et de nature à induire en erreur les futurs voyageurs sur la réalité de mon comportement en tant qu&#39;hôte.
+
+Je ne conteste pas la réalité ni la gravité de l&#39;agression subie par le voyageur, dont je suis sincèrement désolé. Je conteste uniquement le caractère trompeur de l&#39;affirmation relative à l&#39;absence de soutien de ma part, qui est objectivement fausse au regard des pièces jointes.
+
+Je vous remercie de bien vouloir examiner cette demande à la lumière des échanges joints.
+
+Cordialement,
+Rémi</pre></td>
+                      </tr>
+                      <tr>
+                          <td><pre>CLA-B98F8XR3EY</pre></td>
+                          <td><pre></pre></td>
+                      </tr>
+                      <tr>
+                          <td><pre>CLA-K4FHH894KH</pre></td>
+                          <td><pre>Pour le service supplémentaire </pre></td>
+                      </tr>
+                </tbody>
+            </table>
+      </div>
+    </div>
+    <script>
+      // Reformat all PRE's to format JSON
+      document.querySelectorAll("pre").forEach(pre => {try { pre.innerHTML = JSON.stringify(JSON.parse(pre.innerHTML), undefined, 2) } catch (e) {}});
+    </script>
+  </body>
+</html>

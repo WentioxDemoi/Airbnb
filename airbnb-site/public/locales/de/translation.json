@@ -1,1 +1,96 @@
-{"lang":{"change":"Sprache ändern"},"home":{"title":"Urlaub an der Côte d'Azur","subtitle":"Wähle deine Unterkunft","view":"{{name}} ansehen"},"nav":{"back":"← Zurück"},"property":{"soon":"Die Detailseite folgt in Kürze."}}
+{
+  "lang": {
+    "change": "Sprache ändern"
+  },
+  "home": {
+    "title": "Urlaub an der Côte d'Azur",
+    "subtitle": "Wähle deine Unterkunft",
+    "view": "{{name}} ansehen"
+  },
+  "nav": {
+    "back": "← Zurück"
+  },
+  "property": {
+    "soon": "Die Detailseite folgt in Kürze.",
+    "notFound": "Diese Unterkunft gibt es nicht.",
+    "book": "Daten auswählen",
+    "booking": {
+      "title": "Anfrage für einen Aufenthalt",
+      "availabilityNote": "Kalender mit Airbnb synchronisiert. Aufenthaltsanfragen müssen per E-Mail bestätigt werden.",
+      "availabilityLoading": "Airbnb-Verfügbarkeit wird geladen…",
+      "availabilityError": "Die Verfügbarkeit konnte nicht geladen werden. Im Moment können keine Daten angefragt werden.",
+      "retry": "Erneut versuchen",
+      "close": "Schließen",
+      "previousMonth": "Vorheriger Monat",
+      "nextMonth": "Nächster Monat",
+      "available": "Laut Kalender verfügbar",
+      "blocked": "Nicht verfügbar",
+      "chooseArrival": "Wähle dein Anreisedatum.",
+      "chooseDeparture": "Wähle dein Abreisedatum.",
+      "dateUnavailable": "Der Zeitraum enthält einen nicht verfügbaren Tag. Bitte wähle andere Daten.",
+      "name": "Dein Name",
+      "guestEmail": "Deine E-Mail-Adresse",
+      "sendRequest": "Anfrage senden",
+      "sending": "Wird gesendet…",
+      "sendSuccess": "Deine Anfrage wurde gesendet. Wir melden uns bald zur Bestätigung des Aufenthalts.",
+      "sendError": "Die Anfrage konnte nicht gesendet werden. Prüfe deine Verbindung und versuche es erneut.",
+      "formNotConfigured": "Das Buchungsformular ist noch nicht eingerichtet. Bitte versuche es später erneut.",
+      "emailSubject": "Anfrage für einen Aufenthalt – {{property}}"
+    },
+    "prevPhoto": "Vorheriges Foto",
+    "nextPhoto": "Nächstes Foto",
+    "photoAlt": "{{name}}, Foto {{n}} von {{total}}",
+    "guests_one": "{{count}} Gast",
+    "guests_other": "{{count}} Gäste",
+    "bedrooms_one": "{{count}} Schlafzimmer",
+    "bedrooms_other": "{{count}} Schlafzimmer",
+    "beds_one": "{{count}} Bett",
+    "beds_other": "{{count}} Betten",
+    "bathrooms_one": "{{count}} Badezimmer",
+    "bathrooms_other": "{{count}} Badezimmer",
+    "area": "{{count}} m²",
+    "sections": {
+      "space": "Die Unterkunft",
+      "amenities": "Ausstattung",
+      "goodToKnow": "Gut zu wissen",
+      "location": "Lage"
+    },
+    "showAll": "Alle {{count}} Ausstattungsmerkmale anzeigen",
+    "showLess": "Weniger anzeigen",
+    "mapTitle": "Karte der Umgebung",
+    "mapNote": "Ungefährer Standort; die genaue Adresse erhältst du bei der Buchung.",
+    "registration": "Registriernummer: {{number}}"
+  },
+  "amenities": {
+    "ac": "Klimaanlage",
+    "kitchen": "Küche",
+    "heating": "Heizung",
+    "washer": "Waschmaschine",
+    "smoke_detector": "Rauchmelder",
+    "essentials": "Basisausstattung",
+    "hangers": "Kleiderbügel",
+    "iron": "Bügeleisen",
+    "laptop_friendly_workspace": "Arbeitsplatz",
+    "self_checkin": "Selbstständiger Check-in",
+    "lockbox": "Schlüsselbox",
+    "hot_water": "Warmwasser",
+    "body_soap": "Duschgel",
+    "bed_linens": "Bettwäsche",
+    "extra_pillows_and_blankets": "Zusätzliche Kissen und Decken",
+    "microwave": "Mikrowelle",
+    "coffee_maker": "Kaffeemaschine",
+    "refrigerator": "Kühlschrank",
+    "dishwasher": "Geschirrspüler",
+    "dishes_and_silverware": "Geschirr und Besteck",
+    "cooking_basics": "Grundausstattung zum Kochen",
+    "oven": "Backofen",
+    "hot_water_kettle": "Wasserkocher",
+    "dining_table": "Esstisch",
+    "baking_sheet": "Backblech",
+    "cleaning_products": "Reinigungsmittel",
+    "clothes_drying_rack": "Wäscheständer",
+    "wardrobe_or_closet": "Kleiderschrank",
+    "wine_glasses": "Weingläser",
+    "beach_access": "Strände in der Nähe"
+  }
+}

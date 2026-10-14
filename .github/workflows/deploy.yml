@@ -25,6 +25,9 @@ jobs:
           cache-dependency-path: airbnb-site/package-lock.json
       - run: npm ci && npm run build
         working-directory: airbnb-site
+        env:
+          VITE_AVAILABILITYNICE_API_URL: ${{ vars.VITE_AVAILABILITYNICE_API_URL }}
+          VITE_FORMSPREE_FORM_ID: ${{ vars.VITE_FORMSPREE_FORM_ID }}
       - uses: actions/upload-pages-artifact@v5
         with: { path: airbnb-site/dist }
       - id: deployment

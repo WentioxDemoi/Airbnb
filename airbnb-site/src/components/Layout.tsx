@@ -1,8 +1,14 @@
-import { Outlet } from "react-router-dom";
+import { useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { SITE_NAME } from "../config";
 
 export default function Layout() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className="mx-auto flex min-h-svh max-w-6xl flex-col px-5">
       <header className="flex items-center pt-4">
